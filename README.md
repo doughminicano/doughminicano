@@ -1,4 +1,4 @@
-<a herf="https://www.doughminicano.com">
+<a href="https://www.doughminicano.com">
     <h1>Doughminicano</h1>
 </a>
 
