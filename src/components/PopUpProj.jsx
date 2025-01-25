@@ -5,6 +5,8 @@ import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { MdPreview } from "react-icons/md";
 import { TiArrowBack } from "react-icons/ti";
+import { IoIosArrowDropleft } from "react-icons/io";
+import { IoIosArrowDropright } from "react-icons/io";
 
 const PopUpProj = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +38,8 @@ const PopUpProj = () => {
       id: 3,
       title: "Picture Time",
       tools: "React,CSS,Axios",
-      description: "A very simple api app, made from Unsplash API. Made for api practice",
+      description:
+        "A very simple api app, made from Unsplash API. Made for api practice",
       img: "picTimePreview.png",
       link: "https://picturetime.doughminicano.com/",
       code: "https://github.com/doughminicano/Picture-TIme",
@@ -44,7 +47,7 @@ const PopUpProj = () => {
   ];
 
   return (
-    <>
+    <div className="flex p-4 gap-6 max-sm:flex-1 overflow-auto no-scrollbar mt-10">
       <div className="flex p-4 gap-6 max-sm:flex-1 overflow-auto no-scrollbar mt-10">
         {projects.map((project) => (
           <motion.div
@@ -66,12 +69,24 @@ const PopUpProj = () => {
           </motion.div>
         ))}
       </div>
+
       <SpringModal
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         project={selectedProject}
       />
-    </>
+
+      {/* left arrow, right arrow */}
+      <div className="relative -start-72 space-x-12 flex justify-between lg:hidden md:hidden animate-pulse">
+        <div className="text-center">
+          <IoIosArrowDropleft className="flex size-9 text-gray-300/20" />
+        </div>
+        <span className="text-gray-300/20">S W I P E</span>
+        <div className="text-center">
+          <IoIosArrowDropright className="flex size-9 text-gray-300/20" />
+        </div>
+      </div>
+    </div>
   );
 };
 

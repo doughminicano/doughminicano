@@ -12,7 +12,7 @@ export const Menu = (props) => {
       </button>
       <div
         className={`z-10 fixed top-0 right-0 bottom-0 transition-all overflow-hidden flex flex-col
-        ${menuOpened ? "w-80 bg-black" : "w-0"}`}
+        ${menuOpened ? "w-80 bg-black/85 rounded-lg" : "w-0"}`}
       >
         <div className="flex-1 text-blue-700 flex items-start justify-center flex-col gap-20 p-8 hover:animate-pulse hover:text-5xl">
           <MenuButton label="About" onClick={() => onSectionChange(0)} />

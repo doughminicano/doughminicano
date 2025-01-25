@@ -139,19 +139,19 @@ const AboutSection = () => {
             href="https://www.facebook.com/doughminicano/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 text-3xl transition-transform duration-300 transform hover:scale-125"
+            className="text-blue-600 size-20 hover:text-blue-800 text-3xl transition-transform duration-300 transform hover:scale-150"
           >
             <FaFacebook />
           </a>
         </div>
 
         {/* LinkedIn Link */}
-        <div className="flex-1">
+        <div className="flex-1 hover:scale-125">
           <a
             href="https://www.linkedin.com/in/daniel-garcia-14b217210/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700 text-3xl transition-transform duration-300 transform hover:scale-125"
+            className="text-blue-500 hover:text-blue-700 text-3xl transition-transform duration-300 transform "
           >
             <FaLinkedin />
           </a>
@@ -289,7 +289,7 @@ const ProjectsSection = () => {
           Projects
           <FaGithub
             onClick={() => {
-              window.open("https://github.com/doughminicano?tab=repositories");
+              window.open("https://github.com/doughminicano");
             }}
             className="text-black hover:text-gray-700 size-10 transition-transform duration-300 transform hover:scale-125"
           />
