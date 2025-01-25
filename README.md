@@ -1,5 +1,5 @@
 <a href="https://www.doughminicano.com">
-    <h1>Doughminicano</h1>
+    Doughminicano
 </a>
 
 <h1>My Personal Profile Website</h1>
