@@ -44,13 +44,6 @@
     
 </ul>
 
-    
-    
-    
-    
-three": "^0.171.0"
-
-    
 </project>
 
 
@@ -63,4 +56,3 @@ I dab with a lot of things in Tech. I've loved tech since I was young, watching 
     
 </body>
 
-<h2>Enjoy!</h2>
