@@ -80,14 +80,14 @@ const AboutSection = () => {
           delay: 2,
           duration: 0.3,
           ease: "easeInOut",
-          scale: { type: "spring", visualDuration: 0.8, bounce: 0.25 },
+          scale: { type: "spring", visualDuration: 0.6, bounce: 0.15 },
         }}
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
         style={{
           cursor: "pointer",
         }}
-        className="text-6xl font-extrabold px-1  italic mt-2 animate-bounce"
+        className="text-5xl font-extrabold px-1 text-red-500  italic mt-2 animate-bounce"
       >
         <div>{hovered ? "Doughminicano" : "Daniel Garcia"}</div>
       </motion.h1>
@@ -120,21 +120,21 @@ const AboutSection = () => {
       </div>
 
       {/* Social Contacts */}
-      <div className="flex justify-between gap-4 md:gap-6 lg:gap-8 mt-5">
+      <div className="flex justify-between gap-4 md:gap-6 lg:gap-8 mt-5 space-x-6">
         {/* GitHub Link */}
-        <div className="flex-1">
+        <div className="flex-1 hover:scale-150">
           <a
             href="https://github.com/doughminicano"
             target="_blank"
             rel="noopener noreferrer"
             className="text-black hover:text-gray-700 text-3xl transition-transform duration-300 transform hover:scale-125"
           >
-            <FaGithub />
+            <FaGithub className="text-white" />
           </a>
         </div>
 
         {/* Facebook Link */}
-        <div className="flex-1">
+        <div className="flex-1 hover:scale-150">
           <a
             href="https://www.facebook.com/doughminicano/"
             target="_blank"
@@ -146,7 +146,7 @@ const AboutSection = () => {
         </div>
 
         {/* LinkedIn Link */}
-        <div className="flex-1 hover:scale-125">
+        <div className="flex-1 hover:scale-150">
           <a
             href="https://www.linkedin.com/in/daniel-garcia-14b217210/"
             target="_blank"
@@ -283,19 +283,26 @@ const SkillSection = () => {
 // Projects Section
 const ProjectsSection = () => {
   return (
-    <Section className="flex-auto">
-      <div className="flex justify-between gap-10">
-        <h1 className="mt-10 text-5xl font-bold md:block grid grid-columns-1 sm:grid-columns-1 md:grid-columns-2 lg:grid-columns-3 gap-4">
-          Projects
-          <FaGithub
-            onClick={() => {
-              window.open("https://github.com/doughminicano");
-            }}
-            className="text-black hover:text-gray-700 size-10 transition-transform duration-300 transform hover:scale-125"
-          />
-        </h1>
+    <Section>
+      <div className="flex items-center space-x-6">
+        <h1 className="mt-5 text-5xl font-bold">Projects</h1>
+        <FaGithub
+          onClick={() => {
+            window.open("https://github.com/doughminicano");
+          }}
+          className="text-white hover:text-red-500 hover:animate-spin duration-300 size-12"
+        />
       </div>
-        <PopUpProj />
+
+      <motion.span
+        initial={{ x: 0 }}
+        whileInView={{ x: 150, y:50 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        className="mt-5 text-justify text-xl text-slate-500 lg:hidden md:hidden"
+      >
+        Scroll & Click
+      </motion.span>
+      <PopUpProj />
     </Section>
   );
 };

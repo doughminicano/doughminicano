@@ -30,8 +30,8 @@ export const Experience = () => {
           turbidity={2}
           rayleigh={0.017}
           mieCoefficient={0.005}
-          mieDirectionalG={-1}
-          elevation={10}
+          mieDirectionalG={-1.5}
+          elevation={5}
           azimuth={166.7}
           exposure={0.2993}
       />

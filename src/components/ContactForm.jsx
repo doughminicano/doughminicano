@@ -35,7 +35,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-slate-900 px-4 py-16 sm:py-20 bg-opacity-20 lg:px-6 rounded-2xl sm:mt-10">
+    <div className="bg-slate-900 px-4 py-16 sm:py-20 bg-opacity-20 lg:px-6 rounded-2xl sm:mt-10 border-2 border-white/45 border-x-red-500 border-y-blue-700">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-[-8rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-16rem]"
@@ -49,10 +49,10 @@ export default function ContactForm() {
         />
       </div>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
           Leave Me A Message
         </h2>
-        <p className="mt-2 text-sm sm:text-base text-gray-600">
+        <p className="mt-2 text-sm sm:text-base text-gray-500">
           For: Collaborations, Freelance, Questions
         </p>
       </div>
@@ -66,7 +66,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-semibold text-gray-900"
+              className="block text-sm font-semibold text-gray-500 mb-2"
             >
               Name
             </label>
@@ -81,7 +81,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-semibold text-gray-900"
+              className="block text-sm font-semibold text-gray-500 mb-2"
             >
               Email
             </label>
@@ -96,7 +96,7 @@ export default function ContactForm() {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-semibold text-gray-900"
+              className="block text-sm font-semibold text-gray-500 mb-2"
             >
               Message
             </label>
