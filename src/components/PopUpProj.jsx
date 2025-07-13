@@ -14,6 +14,16 @@ const PopUpProj = () => {
   const projects = [
     {
       id: 1,
+      title: "Tekflu",
+      tools: "Hostinger",
+      description:
+        "Personal Branded Website showcasing, blogs, tools and my other websites",
+      img: "/tekfluCOM.png",
+      link: "https://tekflu.com/",
+      code: "Built with Hostingers AI tools & my personal touch",
+    },
+    {
+      id: 2,
       title: "Ticketing System",
       tools: "[Vite/React, tailwindcss, framer-motion]",
       description: "A ticketing system using state and a single component.",
@@ -22,7 +32,7 @@ const PopUpProj = () => {
       code: "https://github.com/doughminicano/ticket_system_offline",
     },
     {
-      id: 2,
+      id: 3,
       title: "Data Manager",
       tools:
         "[React Chart.js, tailwindcss, framer-motion, google-scipts-api, google-sheets-api]",
@@ -33,7 +43,7 @@ const PopUpProj = () => {
       code: "https://github.com/doughminicano/shells.git",
     },
     {
-      id: 3,
+      id: 4,
       title: "Picture Time",
       tools: "React,CSS,Axios",
       description:
