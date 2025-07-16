@@ -109,9 +109,9 @@ const AboutSection = () => {
           : "Welcome,I'm a Software Developer and Cybersecurity Student."}
       </motion.p>
       <br />
-      <div className="text-lg font-extrabold mt-3 italic whitespace-break-spaces flex-initial max-sm:bg-black/5 max-sm:text-white p-2 rounded-md">
+      <div className="text-lg font-extrabold mt-3 mb-2 italic whitespace-break-spaces flex-initial max-sm:bg-black/5 max-sm:text-white p-2 rounded-md">
         <p>
-          I have been coding for the past 2 years and currently <br /> a
+          I have been coding for the past few years and currently <br /> a
           Cybersecurity student. I mainly work with React <br /> but I have been
           using Python too lately. I'm always <br /> looking to connect. Whether
           you have a question or <br /> a new project to work on, feel free to
@@ -283,8 +283,8 @@ const SkillSection = () => {
 // Projects Section
 const ProjectsSection = () => {
   return (
-    <Section>
-      <div className="flex items-center space-x-6">
+    <Section className="flex-auto ">
+      <div className="flex-0 items-center space-x-6">
         <h1 className="mt-5 text-5xl font-bold">Projects</h1>
         <FaGithub
           onClick={() => {
@@ -296,7 +296,7 @@ const ProjectsSection = () => {
 
       <motion.span
         initial={{ x: 0 }}
-        whileInView={{ x: 150, y:50 }}
+        whileInView={{ x: 150, y: 50 }}
         transition={{ duration: 0.7, delay: 0.2 }}
         className="mt-5 text-justify text-xl text-slate-500 lg:hidden md:hidden"
       >

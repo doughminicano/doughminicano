@@ -14,16 +14,25 @@ const PopUpProj = () => {
   const projects = [
     {
       id: 1,
-      title: "Tekflu",
-      tools: "Hostinger",
-      description:
-        "Personal Branded Website showcasing, blogs, tools and my other websites",
-      img: "/tekfluCOM.png",
-      link: "https://tekflu.com/",
-      code: "Built with Hostingers AI tools & my personal touch",
+      title: "Barboxx",
+      tools: "Typescript,React,Javascript,MUI,Node.js",
+      description: "Marketing & Landing page for Barboxx LLC",
+      img: "/barboxx.png",
+      link: "https://www.barboxx.io/",
+      code: "/",
     },
     {
       id: 2,
+      title: "Tekflu",
+      tools: "Hostinger",
+      description:
+        "Personal Branded Website showcasing, blogs, tools and my other websites, built aith Hostingers AI tools and my personal touch",
+      img: "/tekfluCOM.png",
+      link: "https://tekflu.com/",
+      code: "https://hostinger.com?REFERRALCODE=BLMDG22LGVLP",
+    },
+    {
+      id: 3,
       title: "Ticketing System",
       tools: "[Vite/React, tailwindcss, framer-motion]",
       description: "A ticketing system using state and a single component.",
@@ -32,7 +41,7 @@ const PopUpProj = () => {
       code: "https://github.com/doughminicano/ticket_system_offline",
     },
     {
-      id: 3,
+      id: 4,
       title: "Data Manager",
       tools:
         "[React Chart.js, tailwindcss, framer-motion, google-scipts-api, google-sheets-api]",
@@ -43,7 +52,7 @@ const PopUpProj = () => {
       code: "https://github.com/doughminicano/shells.git",
     },
     {
-      id: 4,
+      id: 5,
       title: "Picture Time",
       tools: "React,CSS,Axios",
       description:
@@ -56,11 +65,11 @@ const PopUpProj = () => {
 
   return (
     <>
-      <div className="flex flex-col p-4 gap-6 max-sm:flex-1 overflow-auto no-scrollbar mt-5">
-        <div className="flex p-4 gap-6 max-sm:flex-1 overflow-auto no-scrollbar mt-10">
+      <div className=" w-full p-4 gap-6 max-sm:flex-1 overflow-auto no-scrollbar mt-5">
+        <div className="flex mr-2 gap-6 max-sm:flex-1 overflow-auto no-scrollbar mt-10">
           {projects.map((project) => (
             <motion.div
-              className="border border-white shadow-lg shadow-red-500/50 relative flex-shrink-0 w-full lg:w-96 md:w-64 lg:h-96 md:h-80 bg-slate-900 bg-opacity-75 text-white rounded-2xl overflow-hidden"
+              className="border border-white shadow-lg shadow-red-500/50 relative flex-shrink-0 w-full lg:w-72 md:w-64 lg:h-96 md:h-80 bg-slate-900 bg-opacity-75 text-white rounded-2xl overflow-hidden"
               key={project.id}
               onClick={() => {
                 setSelectedProject(project);
