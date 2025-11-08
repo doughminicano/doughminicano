@@ -36,7 +36,7 @@ const PopUpProj = () => {
       title: "Ticketing System",
       tools: "[Vite/React, tailwindcss, framer-motion, MUI]",
       description: "A ticketing system using .",
-      img: "/ticketingSytem.png",
+      img: "/ticketingSystem.png",
       link: "https://ticketing.doughminicano.com/",
       code: "https://github.com/doughminicano/ticket_system_offline",
     },
