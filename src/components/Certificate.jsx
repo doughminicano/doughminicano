@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Certificate() {
   return (
     <div className="mb-5 mt-10 md:block sm:mb-5">
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-2"> 
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-2">
         {certificates.map((cert) => (
           <motion.div
             className={`${cert.img === "" ? "hidden" : ""} flex flex-col items-center`}
@@ -17,7 +17,8 @@ export default function Certificate() {
               <motion.img
                 src={cert.img}
                 alt={cert.title}
-                className="h-auto object-cover lg:w-96 md:w-64 lg:size-72 md:size-48 max-sm:w-52 bg-opacity-75 text-white border-8 border-x-slate-600 border-y-slate-800"
+                className={`h-auto object-cover lg:w-96 md:w-64 lg:size-72 md:size-48 max-sm:w-52 bg-opacity-75 text-white border-8 border-x-slate-600 border-y-slate-800
+              ${cert.title === "ITILv4" ? "scale-510 w-64 md:w-48 lg:w-56" : ""}`}
               />
             </div>
           </motion.div>
@@ -26,7 +27,6 @@ export default function Certificate() {
     </div>
   );
 }
-
 
 const certificates = [
   {
@@ -53,14 +53,14 @@ const certificates = [
     description: "Google/Coursera Certification",
     img: "GoogleITCert.png",
   },
-  // {
-  //   id: 4,
-  //   title: "Google/CompTIA Dual Cert",
-  //   date: "Dec-2024",
-  //   expires: "N/A",
-  //   description: "Dual Qualification from Coursera",
-  //   img: "GoogleCompTIA.png",
-  // },
+  {
+    id: 4,
+    title: "ITILv4",
+    date: "Dec-2024",
+    expires: "N/A",
+    description: "ITIL Foundation Certificate",
+    img: "ITIL_Certificate.png",
+  },
   {
     id: 5,
     title: "Full-Stack Developer",
