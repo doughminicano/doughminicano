@@ -18,7 +18,7 @@ export default function Certificate() {
                 src={cert.img}
                 alt={cert.title}
                 className={`h-auto object-cover lg:w-96 md:w-64 lg:size-72 md:size-48 max-sm:w-52 bg-opacity-75 text-white border-8 border-x-slate-600 border-y-slate-800
-              ${cert.title === "ITILv4" ? "scale-510 w-64 md:w-48 lg:w-56" : ""}`}
+              ${cert.title === "ITILv4" ? "object-scale-down w-64 md:w-48 lg:w-56" : ""}`}
               />
             </div>
           </motion.div>

@@ -105,17 +105,18 @@ const AboutSection = () => {
       >
         {hovered
           ? "Bienvenido ," +
-            " Soy desarrollador de software y estudiante de ciberseguridad."
-          : "Welcome, I'm a IT Proffesional and Cybersecurity Student."}
+            " Soy un profesional de TI y estudiante de ciberseguridad."
+          : "Welcome, I'm a IT Profesional and Cybersecurity Student."}
       </motion.p>
       <br />
       <div className="text-lg font-extrabold mt-3 mb-2 italic whitespace-break-spaces flex-initial max-sm:bg-black/5 max-sm:text-white p-2 rounded-md">
         <p>
-          I have been coding for the past few years and currently <br /> a
-          Cybersecurity student. I mainly work with React <br /> Javascript and
-          Python are my go to. I'm always <br /> looking to connect. Whether you
-          have a question or <br /> a new project to work on, feel free to reach
-          out to me.
+          I primarily work as an IT technician, been coding <br />
+          for the past few years and currently a Cybersecurity <br />
+          student. React Javascript and Python are <br /> my go to. I'm always
+          looking to connect. Whether you have
+          <br /> a question or a new project to work on, feel free to reach out
+          to me.
         </p>
       </div>
 
