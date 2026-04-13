@@ -11,8 +11,13 @@ export const ScrollManager = (props) => {
   const lastScroll = useRef(0);
   const isAnimating = useRef(false);
 
-  data.fill.classList.add("top-0");
-  data.fill.classList.add("absolute");
+  useEffect(() => {
+    data.fill.classList.add("top-0", "absolute");
+
+    return () => {
+      data.fill.classList.remove("top-0", "absolute");
+    };
+  }, [data.fill]);
 
   useEffect(() => {
     gsap.to(data.el, {
@@ -25,7 +30,7 @@ export const ScrollManager = (props) => {
         isAnimating.current = false;
       },
     });
-  }, [section]);
+  }, [data.el, section]);
 
   useFrame(() => {
     if (isAnimating.current) {

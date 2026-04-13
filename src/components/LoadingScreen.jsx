@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
+import { useProgress } from "@react-three/drei";
+/* eslint-disable react/prop-types */
 
 const BarLoad = () => {
+  const { active, progress } = useProgress();
+
+  if (!active) {
+    return null;
+  }
+
   return (
-    <div className="h-full grid place-content-center bg-black-900/80 px-4 py-24">
-      <BarLoader />
+    <div className="fixed inset-0 z-50 grid place-content-center bg-slate-950/95 px-4 py-24 text-white">
+      <BarLoader progress={progress} />
     </div>
   );
 };
@@ -25,32 +33,36 @@ const variants = {
   },
 };
 
-const BarLoader = () => {
+const BarLoader = ({ progress }) => {
   return (
-    <motion.div
-      transition={{
-        staggerChildren: 0.25,
-      }}
-      initial="initial"
-      animate="animate"
-      className="flex gap-4"
-    >
-      <motion.div variants={variants} className="h-40 w-2 bg-red-500" />
-      <motion.div variants={variants} className="h-40 w-2 bg-blue-500 ml-2" />
-      <motion.div variants={variants} className="h-40 w-2 bg-red-500" />
-      <motion.div variants={variants} className="h-40 w-2 bg-blue ml-2" />
-      <img
-        className="animate-spin"
-        src="dLogo.png"
-        alt="Girl in a jacket"
-        width="250"
-        height="250"
-      />
-      <motion.div variants={variants} className="h-40 w-2 bg-blue" />
-      <motion.div variants={variants} className="h-40 w-2 bg-red-500 ml-2" />
-      <motion.div variants={variants} className="h-40 w-2 bg-blue-500 ml-2" />
-      <motion.div variants={variants} className="h-40 w-2 bg-red-500 ml-2" />
-    </motion.div>
+    <div className="flex flex-col items-center gap-6">
+      <motion.div
+        transition={{
+          staggerChildren: 0.25,
+        }}
+        initial="initial"
+        animate="animate"
+        className="flex items-center gap-4"
+      >
+        <motion.div variants={variants} className="h-40 w-2 bg-red-500" />
+        <motion.div variants={variants} className="ml-2 h-40 w-2 bg-blue-500" />
+        <motion.div variants={variants} className="h-40 w-2 bg-red-500" />
+        <motion.div variants={variants} className="ml-2 h-40 w-2 bg-blue-500" />
+        <img
+          className="h-32 w-32 animate-spin object-contain sm:h-52 sm:w-52"
+          src="/dLogo.png"
+          alt="Doughminicano logo"
+        />
+        <motion.div variants={variants} className="h-40 w-2 bg-blue-500" />
+        <motion.div variants={variants} className="ml-2 h-40 w-2 bg-red-500" />
+        <motion.div variants={variants} className="ml-2 h-40 w-2 bg-blue-500" />
+        <motion.div variants={variants} className="ml-2 h-40 w-2 bg-red-500" />
+      </motion.div>
+      <p className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-300">
+        Loading experience
+      </p>
+      <p className="text-lg font-bold text-white">{Math.round(progress)}%</p>
+    </div>
   );
 };
 

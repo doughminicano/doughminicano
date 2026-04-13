@@ -1,8 +1,6 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { useState } from "react";
-import ContactForm from "./ContactForm";
 import Certificate from "./Certificate";
 import PopUpProj from "./PopUpProj";
 import { SiCredly } from "react-icons/si";
@@ -14,10 +12,11 @@ import {
 } from "react-icons/fa";
 
 const Section = (props) => {
-  const { children } = props;
+  const { children, className = "", ...rest } = props;
 
   return (
     <motion.section
+      {...rest}
       initial={{
         opacity: 0,
         y: 50,
@@ -30,9 +29,7 @@ const Section = (props) => {
         duration: 1,
         delay: 0.6,
       }}
-      className={`
-    h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center
-    `}
+      className={`h-screen w-screen max-w-screen-2xl mx-auto flex flex-col items-start justify-center p-8 ${className}`}
     >
       {children}
     </motion.section>
@@ -62,7 +59,7 @@ const AboutSection = () => {
       <motion.h1
         className="text-4xl font-extrabold leading-snug italic"
         initial={{ opacity: 0, translateY: -100 }}
-        animate={{ opacity: 1, translateY: 0, ease: "easeOut" }}
+        animate={{ opacity: 1, translateY: 0 }}
         transition={{ duration: 1, delay: 1 }}
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
@@ -74,11 +71,11 @@ const AboutSection = () => {
       </motion.h1>
 
       <motion.h1
-        initial={{ opacity: 0, scale: 100 }}
-        animate={{ opacity: 1, scale: 0 }}
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{
-          delay: 2,
-          duration: 0.3,
+          delay: 1.3,
+          duration: 0.5,
           ease: "easeInOut",
           scale: { type: "spring", visualDuration: 0.6, bounce: 0.15 },
         }}
@@ -89,7 +86,7 @@ const AboutSection = () => {
         }}
         className="text-5xl font-extrabold px-1 text-red-500  italic mt-2 animate-bounce"
       >
-        <div>{hovered ? "Doughminicano" : "Daniel Garcia"}</div>
+        {hovered ? "Doughminicano" : "Daniel Garcia"}
       </motion.h1>
       <motion.p
         className="text-lg font-extrabold text-blue-700 mt-3 italic whitespace-break-spaces"
@@ -100,23 +97,21 @@ const AboutSection = () => {
         onHoverEnd={() => setHovered(false)}
         style={{
           cursor: "pointer",
-          textDecorationLine: "blink",
         }}
       >
         {hovered
-          ? "Bienvenido ," +
-            " Soy un profesional de TI y estudiante de ciberseguridad."
-          : "Welcome, I'm a IT Profesional and Cybersecurity Student."}
+          ? "Bienvenido, soy un profesional de TI que crea experiencias web modernas y sigue creciendo en ciberseguridad."
+          : "I build modern web experiences and bring an IT-first mindset to every project."}
       </motion.p>
       <br />
       <div className="text-lg font-extrabold mt-3 mb-2 italic whitespace-break-spaces flex-initial max-sm:bg-black/5 max-sm:text-white p-2 rounded-md">
         <p>
-          I primarily work as an IT technician, been coding <br />
-          for the past few years and currently a Cybersecurity <br />
-          student. React Javascript and Python are <br /> my go to. I'm always
-          looking to connect. Whether you have
-          <br /> a question or a new project to work on, feel free to reach out
-          to me.
+          I&apos;m an IT professional, frontend developer, and cybersecurity student focused on
+          <br /> building clean, reliable experiences for real people. I work primarily with
+          <br /> React, JavaScript, and Python, and I enjoy projects that blend
+          <br /> usability, problem-solving, and strong technical execution.
+          <br /> If you need a polished website, a custom internal tool, or a thoughtful
+          <br /> collaborator on your next idea, I&apos;d love to connect.
         </p>
       </div>
 
@@ -128,6 +123,7 @@ const AboutSection = () => {
             href="https://github.com/doughminicano"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Daniel Garcia's GitHub profile"
             className="text-black hover:text-gray-700 text-3xl transition-transform duration-300 transform hover:scale-125"
           >
             <FaGithub className="text-white" />
@@ -140,6 +136,7 @@ const AboutSection = () => {
             href="https://www.facebook.com/doughminicano/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Daniel Garcia's Facebook profile"
             className="text-blue-600 size-20 hover:text-blue-800 text-3xl transition-transform duration-300 transform hover:scale-150"
           >
             <FaFacebook />
@@ -152,6 +149,7 @@ const AboutSection = () => {
             href="https://www.linkedin.com/in/daniel-garcia-14b217210/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Daniel Garcia's LinkedIn profile"
             className="text-blue-500 hover:text-blue-700 text-3xl transition-transform duration-300 transform "
           >
             <FaLinkedin />
@@ -210,9 +208,13 @@ const SkillSection = () => {
     <Section>
       <div>
         <motion.h1 className="text-5xl font-bold">Skills</motion.h1>
+        <p className="mt-4 max-w-xl text-base font-semibold text-slate-300">
+          My strongest work sits at the intersection of IT support, frontend
+          engineering, and practical problem-solving.
+        </p>
         <div className="mt-8 space-y-4">
           {skills.map((skill, index) => (
-            <div className="w-64" key={index}>
+            <div className="w-64" key={skill.title}>
               <motion.h3
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{
@@ -224,7 +226,7 @@ const SkillSection = () => {
               >
                 {skill.title}
               </motion.h3>
-              <div className="h-2 w-full bg-gray-400/50 rectangle-full mt-2.5">
+              <div className="mt-2.5 h-2 w-full rounded-full bg-gray-400/50">
                 <motion.div
                   initial={{ scaleX: 0, originX: 0 }}
                   whileInView={{
@@ -250,7 +252,7 @@ const SkillSection = () => {
         <h1 className="text-5xl font-bold mt-10">Languages</h1>
         <div className="mt-8 space-y-4">
           {languages.map((lng, index) => (
-            <div className="w-64" key={index}>
+            <div className="w-64" key={lng.title}>
               <motion.h3
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{
@@ -258,7 +260,7 @@ const SkillSection = () => {
                   y: 0,
                 }}
                 transition={{ duration: 2.5, delay: 1 + index * 0.2 }}
-                className="text-xl font-bold tex-gray-800"
+                className="text-xl font-bold text-gray-800"
               >
                 {lng.title}
               </motion.h3>
@@ -287,12 +289,15 @@ const ProjectsSection = () => {
     <Section className="flex-auto ">
       <div className="flex-0 items-center space-x-6">
         <h1 className="mt-5 text-5xl font-bold">Projects</h1>
-        <FaGithub
-          onClick={() => {
-            window.open("https://github.com/doughminicano");
-          }}
-          className="text-white hover:text-red-500 hover:animate-spin duration-300 size-12"
-        />
+        <a
+          href="https://github.com/doughminicano"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Daniel Garcia's GitHub projects"
+          className="text-white transition duration-300 hover:text-red-500 hover:animate-spin"
+        >
+          <FaGithub className="size-12" />
+        </a>
       </div>
 
       <motion.span
@@ -303,6 +308,10 @@ const ProjectsSection = () => {
       >
         Scroll & Click
       </motion.span>
+      <p className="mt-5 max-w-2xl text-base font-semibold text-slate-300">
+        These projects highlight the kind of work I enjoy most: business-facing
+        websites, internal tools, and data-driven interfaces that solve real problems.
+      </p>
       <PopUpProj />
     </Section>
   );
@@ -316,12 +325,15 @@ const CertificatesSection = () => {
         <h1 className="mt-10 text-5xl font-bold md:block grid grid-columns-1 sm:grid-columns-1 md:grid-columns-2 lg:grid-columns-3 gap-4">
           Certificates
         </h1>
-        <SiCredly
-          className="mt-10 text-blue-700 cursor-pointer animate-pulse size-16 border-4 p-1 border-blue-700 rounded-full hover:animate-spin hover:text-red-700"
-          onClick={() => {
-            window.open("https://www.credly.com/users/daniel-garcia.8dcb663e");
-          }}
-        />
+        <a
+          href="https://www.credly.com/users/daniel-garcia.8dcb663e"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Daniel Garcia's Credly badges"
+          className="mt-10 text-blue-700 animate-pulse rounded-full border-4 border-blue-700 p-1 transition hover:animate-spin hover:text-red-700"
+        >
+          <SiCredly className="size-16" />
+        </a>
       </div>
       <Certificate />
     </Section>
@@ -332,7 +344,22 @@ const CertificatesSection = () => {
 const Contact = () => {
   return (
     <Section>
-      <ContactForm />
+      <div className="max-w-2xl rounded-3xl border-2 border-white/30 bg-slate-900/60 p-8 shadow-lg shadow-blue-950/40">
+        <h1 className="text-5xl font-bold text-white">Contact</h1>
+        <p className="mt-4 text-base font-semibold text-slate-300">
+          Have a project in mind, need help improving a workflow, or want to
+          talk through an idea? The best way to reach me is by email.
+        </p>
+        <a
+          href="mailto:daniel@tekflu.com"
+          className="mt-8 inline-block rounded-2xl border border-red-400 bg-black/30 px-6 py-4 text-2xl font-extrabold text-white transition hover:border-blue-400 hover:text-blue-200"
+        >
+          daniel.garcia@tekflu.com
+        </a>
+        <p className="mt-4 max-w-xl text-sm font-semibold text-slate-400">
+          Email me for freelance work, collaborations, or general inquiries.
+        </p>
+      </div>
     </Section>
   );
 };

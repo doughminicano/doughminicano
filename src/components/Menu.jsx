@@ -6,9 +6,15 @@ export const Menu = (props) => {
     <>
       <button
         onClick={() => setMenuOpened(!menuOpened)}
+        aria-expanded={menuOpened}
+        aria-label={menuOpened ? "Close navigation menu" : "Open navigation menu"}
         className="z-20 fixed top-12 right-12 w-28 h-auto"
       >
-        <img src="/dLogo.png" alt="my_Logo" className="w-auto h-auto hover:animate-ping max-sm:size-24 max-sm:relative max-sm:start-12" />
+        <img
+          src="/dLogo.png"
+          alt="Doughminicano logo"
+          className="w-auto h-auto hover:animate-ping max-sm:size-24 max-sm:relative max-sm:start-12"
+        />
       </button>
       <div
         className={`z-10 fixed top-0 right-0 bottom-0 transition-all overflow-hidden flex flex-col

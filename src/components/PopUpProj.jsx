@@ -15,27 +15,29 @@ const PopUpProj = () => {
     {
       id: 1,
       title: "Barboxx",
-      tools: "Typescript,React,Javascript,MUI,Node.js",
-      description: "Marketing & Landing page for Barboxx LLC",
+      tools: "TypeScript, React, JavaScript, MUI, Node.js",
+      description:
+        "A polished marketing site built to present the Barboxx brand clearly and convert visitors into leads.",
       img: "/barboxx.png",
       link: "https://www.barboxx.io/",
-      code: "/",
+      code: null,
     },
     {
       id: 2,
       title: "Tekflu",
       tools: "Hostinger",
       description:
-        "Personal Branded Website showcasing, blogs, tools and my other websites, built aith Hostingers AI tools and my personal touch",
+        "A personal brand site designed to organize content, tools, and linked projects into one clear online presence.",
       img: "/tekfluCOM.png",
       link: "https://tekflu.com/",
-      code: "https://hostinger.com?REFERRALCODE=BLMDG22LGVLP",
+      code: null,
     },
     {
       id: 3,
       title: "Ticketing System",
-      tools: "[Vite/React, tailwindcss, framer-motion, MUI]",
-      description: "A ticketing system using .",
+      tools: "Vite, React, Tailwind CSS, Framer Motion, MUI",
+      description:
+        "A ticket management interface focused on organizing requests, improving visibility, and making support workflows easier to handle.",
       img: "/ticketingSystem.png",
       link: "https://ticketing.doughminicano.com/",
       code: "https://github.com/doughminicano/ticket_system_offline",
@@ -44,20 +46,20 @@ const PopUpProj = () => {
       id: 4,
       title: "Data Manager",
       tools:
-        "[React Chart.js, tailwindcss, framer-motion, google-scipts-api, google-sheets-api]",
+        "React, Chart.js, Tailwind CSS, Framer Motion, Google Scripts API, Google Sheets API",
       description:
-        "A dashboard using recipes from my fuel transactions for the past 3 years. Real-time updates",
-      img: "shellsPreview.png",
+        "A real-time dashboard built around fuel transaction history to turn raw spreadsheet data into something easier to monitor and act on.",
+      img: "/shellsPreview.png",
       link: "https://shells.doughminicano.com/",
       code: "https://github.com/doughminicano/shells.git",
     },
     {
       id: 5,
       title: "Picture Time",
-      tools: "React,CSS,Axios",
+      tools: "React, CSS, Axios",
       description:
-        "A very simple api app, made from Unsplash API. Made for api practice",
-      img: "picTimePreview.png",
+        "A lightweight image search app built with the Unsplash API as a focused exercise in API integration and frontend interaction.",
+      img: "/picTimePreview.png",
       link: "https://picturetime.doughminicano.com/",
       code: "https://github.com/doughminicano/Picture-TIme",
     },
@@ -146,18 +148,18 @@ const SpringModal = ({ isOpen, setIsOpen, project }) => {
                   Go Back
                 </button>
                 <a
-                  href={project.code}
+                  href={project.code || project.link}
                   target="_blank"
-                  rel="noRef"
+                  rel="noopener noreferrer"
                   className="bg-black transition text-white font-semibold w-24 py-2 rounded text-center"
                 >
                   <FaGithub className="relative  start-8 size-8" />
-                  Code
+                  {project.code ? "Code" : "Live"}
                 </a>
                 <a
                   href={project.link}
                   target="_blank"
-                  rel="noRef"
+                  rel="noopener noreferrer"
                   className="bg-sky-400 text-white font-semibold w-24 py-2 rounded text-center"
                 >
                   <MdPreview className="relative start-8 size-8" />
